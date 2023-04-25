@@ -1,0 +1,115 @@
+.background {
+    background-image: url("/public/assets/sunset2.jpg");
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: large;
+    font-weight: lighter;
+    font-family: 'Barlow', sans-serif;
+    padding-top: 30px;
+    line-height: 200%;
+}
+
+.search {
+    text-align: center;
+    padding: 10.61rem;
+    position: relative;
+    
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+
+input {
+    padding: .7rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    text-align: left;    
+    color: white;
+}
+
+::placeholder {
+    color: #f8f8f8;
+}
+
+.icon {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 28px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.settingicon {
+    color: #f8f8f8;
+    font-size: 20px;
+    margin-right: -2rem;
+}
+
+.fontstyle {
+    font-family: 'Barlow', sans-serif;
+
+}
+
+.logo {
+    background-image: url("/public/assets/ClimateSmart\ -\ Logo.png");
+    position: relative;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 4rem 3rem;
+    background-size: 300px;
+    margin-bottom: -78px;
+    justify-content: center;
+    align-items: center;
+    
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

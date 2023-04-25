@@ -1,0 +1,171 @@
+.background {
+    background-image: url("/public/assets/sunset2.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+}
+
+.divAnimation {
+    text-align: center;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+
+/* Search Button */
+.searchButton {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    color: #000000;
+    border-radius: 25px;
+    position: absolute;
+    margin: auto;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+.searchButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+input {
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    text-align: left;
+    color: white;
+}
+
+.searchbox {
+    margin-left: 20px;
+    padding: .7rem 3rem;
+}
+
+::placeholder {
+    color: #f8f8f8;
+}
+
+.icon {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 28px;
+    margin: 5px 5px;
+}
+
+.settingicon {
+    color: #f8f8f8;
+    font-size: 20px;
+    margin-right: -2rem;
+}
+
+
+.logo {
+    background-image: url("/public/assets/ClimateSmart\ -\ Logo.png");
+    position: relative;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 4rem 3rem;
+    background-size: 300px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+
+ul ul {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+
+    display: block;
+    position: relative;
+    padding: 5px;
+    width: 230px;
+    height: 45px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: left;
+}
+
+ul ul:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.entercity {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.errormsg {
+    color: rgb(255, 0, 0);
+    margin-left: 25px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

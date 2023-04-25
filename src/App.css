@@ -1,0 +1,30 @@
+
+body {
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+p {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: large;
+  font-weight: lighter;
+  padding-top: 30px;
+  line-height: 200%;
+}
+
+nav, p, .fontstyle, div  {
+  font-family: 'Barlow', sans-serif;
+}
+
+.cloudicon {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
