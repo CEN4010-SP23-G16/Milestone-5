@@ -77,28 +77,40 @@ export default function Info() {
 
       <Container>
       <Row className='forecast'>
-          {location.state.forecast.list
-            .filter((data) => data.dt_txt.includes('12:00:00'))
-            .slice(0, 5)
-            .map((data) => (
-              <Col key={data.dt}>
-                <div>
-                  <h3>{new Date(data.dt_txt).toLocaleDateString(undefined, { weekday: 'short' })}
-                    <br></br>
-                    {data.weather[0].icon === "01d" ? <BsCloudSunFill /> :
-                    data.weather[0].icon === "01n" || data.weather[0].icon === "02n" || data.weather[0].icon === "03n" || data.weather[0].icon === "04n" ? <BsCloudMoonFill /> :
-                    data.weather[0].icon === "02d" || data.weather[0].icon === "03d" || data.weather[0].icon === "04d" ? <BsCloudsFill /> :
-                    data.weather[0].icon === "09d" || data.weather[0].icon === "09n" || data.weather[0].icon === "10d" || data.weather[0].icon === "10n" ? <BsCloudRainFill /> :
-                    data.weather[0].icon === "11d" || data.weather[0].icon === "11n" ? <BsFillCloudLightningRainFill /> :
-                    data.weather[0].icon === "50d" || data.weather[0].icon === "50n" ? <BsCloudHaze2 /> :
-                    data.weather[0].icon === "13d" || data.weather[0].icon === "13n" ? <BsSnow /> : null}
-                    <br></br>
-                    <p>Max: {data.main.temp_max.toFixed()}&deg;F<br></br>Min: {data.main.temp_min.toFixed()}&deg;F</p>
-                  </h3>
-                </div>
-              </Col>
-            ))}
-        </Row>
+  {location.state.forecast.list
+    .filter((data) => data.dt_txt.includes('12:00:00'))
+    .slice(0, 5)
+    .map((data) => {
+      let temps = location.state.forecast.list.filter((item) => {
+        return item.dt_txt.includes(data.dt_txt.substr(0, 10))
+      }).map((item) => item.main.temp)
+
+      let maxTemp = Math.max(...temps).toFixed()
+      let minTemp = Math.min(...temps).toFixed()
+
+      return (
+        <Col key={data.dt}>
+          <div>
+            <h3>
+              {new Date(data.dt_txt).toLocaleDateString(undefined, { weekday: 'short' })}
+              <br></br>
+              {data.weather[0].icon === "01d" ? <BsCloudSunFill /> :
+              data.weather[0].icon === "01n" || data.weather[0].icon === "02n" || data.weather[0].icon === "03n" || data.weather[0].icon === "04n" ? <BsCloudMoonFill /> :
+              data.weather[0].icon === "02d" || data.weather[0].icon === "03d" || data.weather[0].icon === "04d" ? <BsCloudsFill /> :
+              data.weather[0].icon === "09d" || data.weather[0].icon === "09n" || data.weather[0].icon === "10d" || data.weather[0].icon === "10n" ? <BsCloudRainFill /> :
+              data.weather[0].icon === "11d" || data.weather[0].icon === "11n" ? <BsFillCloudLightningRainFill /> :
+              data.weather[0].icon === "50d" || data.weather[0].icon === "50n" ? <BsCloudHaze2 /> :
+              data.weather[0].icon === "13d" || data.weather[0].icon === "13n" ? <BsSnow /> : null}
+              <br></br>
+              <p>Max: {maxTemp}&deg;F<br></br>Min: {minTemp}&deg;F</p>
+            </h3>
+          </div>
+        </Col>
+      )
+    })}
+</Row>
+
+
       </Container>
     </>
   )
