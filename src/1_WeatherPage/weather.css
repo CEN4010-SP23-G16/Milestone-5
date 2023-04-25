@@ -41,10 +41,6 @@ h2, h3, h4 {
     margin-top: 10px;
 }
 
-.percent {
-    margin-bottom: 5px;
-}
-
 .divAnimation {
     text-align: center;
     position: relative;
@@ -59,16 +55,36 @@ h2, h3, h4 {
    margin-left: -140px;
 }
 
-.weather_card h2 {
+.weather_card h3 {
     display: grid;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     padding: 1rem;
     border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    margin-top: 12px;
 }
 
-.forecast{
+.forecast h3{
     display: inline-flexbox;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.weathericon {
+    font-size: 40px;
+    color: white;
+    display: inline-block;
+    align-items: center;
+    margin-left: 250px;
+}
+
+p {
+    font-size: 20px;
 }
 
 @keyframes fadeIn {
