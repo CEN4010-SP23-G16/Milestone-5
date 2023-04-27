@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position: static;
+    position:static;
 
     animation: fadeIn 2s;
     -webkit-animation: fadeIn 2s;
@@ -56,23 +56,26 @@ h2, h3, h4 {
 }
 
 .weather_card h3 {
-    display: grid;
+    display: inline-flexbox;
     align-items: center;
     background: rgba(0, 0, 0, 0.4);
-    padding: 1rem;
-    border-radius: 10px;
-    border-style: solid;
+    /*border-radius: 10px;
+    border-style: solid;*/
     border-color: rgba(255, 255, 255, 0.2);
-    margin-top: 12px;
+    width: 162px;
+    height: 130px;
+    margin-top: 20px !important;
+    line-height: 10px;
 }
 
 .forecast h3{
     display: inline-flexbox;
     background: rgba(0, 0, 0, 0.4);
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 5px;
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 1);
+    border-width: 1.5px;
 }
 
 .weathericon {
@@ -86,6 +89,13 @@ h2, h3, h4 {
 p {
     font-size: 20px;
 }
+
+.weather_column {
+    border-right: 1.5px solid #ccc;
+    padding-right: 20px;
+    height: 100px;
+    line-height: 20px;
+}  
 
 @keyframes fadeIn {
     0% { opacity: 0; }

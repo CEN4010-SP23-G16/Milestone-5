@@ -38,40 +38,50 @@ export default function Info() {
           <h3 className='namedate' style={{ marginTop: '-30px' }}>{convertTimeStamp(location.state.weather.dt, location.state.weather.timezone)}</h3>
         </Col>
         <div style={{ marginLeft: '-147px', marginTop: '10px' }}><LocationSearch location={location} /></div>
+      
         <Col>
           <div className='weathericon'>
             {location.state.weather.weather[0].icon === "01d" ? <BsCloudSunFill /> :
-              location.state.weather.weather[0].icon === "01n" || location.state.weather.weather[0].icon === "02n" || location.state.weather.weather[0].icon === "03n" || location.state.weather.weather[0].icon === "04n" ? <BsCloudMoonFill /> :
-                location.state.weather.weather[0].icon === "02d" || location.state.weather.weather[0].icon === "03d" || location.state.weather.weather[0].icon === "04d" ? <BsCloudsFill /> :
-                  location.state.weather.weather[0].icon === "09d" || location.state.weather.weather[0].icon === "09n" || location.state.weather.weather[0].icon === "10d" || location.state.weather.weather[0].icon === "10n" ? <BsCloudRainFill /> :
-                    location.state.weather.weather[0].icon === "11d" || location.state.weather.weather[0].icon === "11n" ? <BsFillCloudLightningRainFill /> :
-                      location.state.weather.weather[0].icon === "50d" || location.state.weather.weather[0].icon === "50n" ? <BsCloudHaze2 /> :
-                        location.state.weather.weather[0].icon === "13d" || location.state.weather.weather[0].icon === "13n" ? <BsSnow /> : null}
+            location.state.weather.weather[0].icon === "01n" || location.state.weather.weather[0].icon === "02n" || location.state.weather.weather[0].icon === "03n" || location.state.weather.weather[0].icon === "04n" ? <BsCloudMoonFill /> :
+            location.state.weather.weather[0].icon === "02d" || location.state.weather.weather[0].icon === "03d" || location.state.weather.weather[0].icon === "04d" ? <BsCloudsFill /> :
+            location.state.weather.weather[0].icon === "09d" || location.state.weather.weather[0].icon === "09n" || location.state.weather.weather[0].icon === "10d" || location.state.weather.weather[0].icon === "10n" ? <BsCloudRainFill /> :
+            location.state.weather.weather[0].icon === "11d" || location.state.weather.weather[0].icon === "11n" ? <BsFillCloudLightningRainFill /> :
+            location.state.weather.weather[0].icon === "50d" || location.state.weather.weather[0].icon === "50n" ? <BsCloudHaze2 /> :
+            location.state.weather.weather[0].icon === "13d" || location.state.weather.weather[0].icon === "13n" ? <BsSnow /> : null}
             <h2 style={{ display: 'inline-block', marginLeft: '10px' }}> {location.state.weather.main.temp.toFixed()}&deg;F</h2>
           </div>
         </Col>
       </Container>
 
       <Container className='weather_card'>
+        <div>
+          <br></br>
+        </div>
         <Row>
-          <Col>
-            <h3>Feels like <br></br>{location.state.weather.main.feels_like.toFixed()}&deg;F</h3>
+          <Col className='weather_column'>
+            <h4>Feels like<br></br>{location.state.weather.main.feels_like.toFixed()}&deg;F</h4>
+          </Col>
+          <Col className='weather_column'>
+            <h4>Humidity<br></br>{location.state.weather.main.humidity.toFixed()}%</h4>
+          </Col>
+          <Col className='weather_column'>
+            <h4>Wind Speed<br></br>{location.state.weather.wind.speed} m/s</h4>
+          </Col>
+          <Col className='weather_column'>
+            <h4>Precipitation<br></br>{location.state.weather.rain ? location.state.weather.rain['1h'] + ' mm' : 'N/A'}</h4>
+          </Col>
+          <Col className='weather_column'>
+            <h4>AQI<br></br>{location.state.airQuality.list[0].main.aqi}</h4>
           </Col>
           <Col>
-            <h3>Humidity <br></br> {location.state.weather.main.humidity.toFixed()}%</h3>
-          </Col>
-          <Col>
-            <h3>Wind Speed <br></br> {location.state.weather.wind.speed} m/s</h3>
-          </Col>
-          <Col>
-            <h3>Precipitation <br></br>{location.state.weather.rain ? location.state.weather.rain['1h'] + ' mm' : 'N/A'}</h3>
+            <h4>Pollen Lvl<br></br>{location.state.pollen.data[0].Count.tree_pollen}</h4>
           </Col>
         </Row>
       </Container>
 
       <Row>
         <Col>
-          <h2 style={{ marginBottom: '15px' }}><hr></hr>Forecast</h2>
+          <h2 style={{ marginBottom: '15px'}}><hr></hr>5-Day Forecast</h2>
         </Col>
       </Row>
 
