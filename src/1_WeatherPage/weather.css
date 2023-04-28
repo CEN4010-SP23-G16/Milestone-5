@@ -7,7 +7,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position: relative;
+    position: absolute;
+    overflow: auto;
 
     animation: fadeIn 2s;
     -webkit-animation: fadeIn 2s;
