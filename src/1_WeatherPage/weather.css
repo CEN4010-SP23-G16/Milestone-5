@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position:absolute;
+    position:static;
 
     animation: fadeIn 2s;
     -webkit-animation: fadeIn 2s;
