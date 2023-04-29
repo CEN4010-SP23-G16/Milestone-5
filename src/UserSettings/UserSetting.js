@@ -12,8 +12,8 @@ import './UserSettings.css';
 export default function UserSetting() {
   const firstName = useSelector((state) => state.user.firstName);
   const ageRange = useSelector((state) => state.settings.ageRange);
-  
   const allergies = useSelector((state) => state.settings.allergies);
+  const notificationType = useSelector((state) => state.settings.notificationType);
 
   const dispatch = useDispatch();
 
@@ -25,10 +25,16 @@ export default function UserSetting() {
     dispatch(toggleAppNoti(value));
   };
 
-  const handleNotificationTypeChange = (type, value) => {
-    dispatch(updateNotificationType({ type, value }));
+  const handleNotificationTypeChange = (id, checked) => {
+    const updatedNotificationType = notificationType.map((type) => {
+      if (type.id === id) {
+        return { ...type, checked };
+      }
+      return type;
+    });
+    dispatch(updateNotificationType(updatedNotificationType));
   };
-
+  
   const handleCheckboxChange = (name, checked) => {
     const updatedAgeRange = ageRange.map((age) => {
       if (age.title === name) {
@@ -69,24 +75,15 @@ export default function UserSetting() {
                         id={age.id}
                         label={age.title}
                         checked={age.checked}
-                        onChange={
-                          (e) => { 
-                            let check = e.target.checked;
-                            handleCheckboxChange(e.target.name, check)
-                          }
-                        }
+                        onChange={(e) => handleCheckboxChange(age.title, e.target.checked)}
                         name={age.title}
                       />
                     </div>
                   ))}
                 </div>
-
               </Form.Group>
-
-
               <Form.Group>
                 <Form.Label htmlFor='allergies'>Do you have allergies?</Form.Label>
-
                 <Form.Control
                   type='text'
                   placeholder='Enter allergies (If you have any)'
@@ -107,27 +104,17 @@ export default function UserSetting() {
               <Form.Group>
                 <Form.Label>Would you like to get notifications of these types?</Form.Label>
                 <div className='d-flex'>
-                  <Form.Check
-                    type='checkbox'
-                    id='ExtremeWeather'
-                    label='ExtremeWeather'
-                    className='m-1'
-                    onChange={(e) => handleNotificationTypeChange('extremeWeather', e.target.checked)}
-                  />
-                  <Form.Check
-                    type='checkbox'
-                    id='Forecast'
-                    label='Forecast'
-                    className='m-1'
-                    onChange={(e) => handleNotificationTypeChange('forecast', e.target.checked)}
-                  />
-                  <Form.Check
-                    type='checkbox'
-                    id='AllergyWarnings'
-                    label='AllergyWarnings'
-                    className='m-1'
-                    onChange={(e) => handleNotificationTypeChange('allergy', e.target.checked)}
-                  />
+                  {notificationType.map((type) => (
+                    <div key={type.id}>
+                      <Form.Check
+                        type='checkbox'
+                        className='m-1'
+                        id={type.id}
+                        label={type.title}
+                        onChange={(e) => handleNotificationTypeChange(type.id, e.target.checked)}
+                      />
+                    </div>
+                  ))}
                 </div>
               </Form.Group>
 

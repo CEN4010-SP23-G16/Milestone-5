@@ -10,11 +10,11 @@ const initialState = {
   ],
   allergies: '',
   appNoti: true,
-  notificationType: {
-    extremeWeather: false,
-    forecast: false,
-    allergy: false,
-  },
+  notificationType: [
+    {id:0, title:'Extreme Weather', checked: false},
+    {id:1, title:'Forecast', checked: false},
+    {id:2, title:'Allergy', checked: false}
+  ],
 };
 
 const settingsSlice = createSlice({
