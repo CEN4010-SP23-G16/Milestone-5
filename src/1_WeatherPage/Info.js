@@ -70,12 +70,12 @@ export default function Info() {
           <Col className='weather_column'>
             <h4>Precipitation<br></br>{location.state.weather.rain ? location.state.weather.rain['1h'] + ' mm' : 'N/A'}</h4>
           </Col>
-          <Col className='weather_column'>
+          /*<Col className='weather_column'>
             <h4>AQI<br></br>{location.state.airQuality.list[0].main.aqi}</h4>
           </Col>
           <Col>
             <h4>Pollen Lvl<br></br>{location.state.pollen.data[0].Count.tree_pollen}</h4>
-          </Col>
+          </Col>*/
         </Row>
       </Container>
 
