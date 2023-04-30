@@ -8,8 +8,8 @@
     background-size: cover;
     background-attachment: fixed;
     position: absolute;
-    overflow: auto;
-
+    overflow:auto;
+    
     animation: fadeIn 2s;
     -webkit-animation: fadeIn 2s;
     -moz-animation: fadeIn 2s;
